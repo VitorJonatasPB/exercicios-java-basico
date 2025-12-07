@@ -73,3 +73,42 @@ import java.util.Scanner;
       }
 ```
 4. Escreva um código onde o usuário informa um número inicial, posteriormente irá informar outros N números, a execução do código irá continuar até que o número informado dividido pelo primeiro número tenha resto diferente de  0 na divisão, números menores que o primeiro número devem ser ignorados
+```
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o primeiro número: ");
+        int number1 = sc.nextInt();
+
+        int resultado;
+        int number2;
+        int resto;
+
+        while (true){
+
+            do { 
+                System.out.print("Digite o segundo número (maior que o primeiro): ");
+                number2 = sc.nextInt();
+
+                if(number2 <= number1){
+                    System.out.println("Atenção!!!\nSegundo número precisa ser maior que o primeiro.\n");
+                }
+            } while (number2 <= number1);
+
+            if(number2 % number1 == 0){
+                resultado = number2 / number1;
+                System.out.println("Resultado: " + resultado);
+            } else {
+                resto = number2 % number1;
+                System.out.println(resto + "\nResto diferente de zero! Encerrando...");
+                break;
+            }
+        }
+        sc.close();
+    }
+}
+```
